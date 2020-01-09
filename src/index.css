@@ -1,0 +1,272 @@
+/*
+JABAR DIGITAL SERVICE
+URL: ?
+AUTHOR: Nabil Amer Thabit (nbilz//lab//dsign | @nbilz)
+EMAIL: nbilz@live.com
+CREATE DATE: Jan 7, 2020
+UPDATE DATE: Jan 7, 2020
+REVISION: 1
+NAME: index.css
+TYPE: Cascading Style Sheet
+DESCRIPTION: Jabar Digital Service | Formulir Pendaftaran Online 
+PALLETE:    1. #00B8F1 / rgb(0, 184, 241) (Pure (or Mostly Pure) Cyan / Cerulean)
+            2. #009D57 / rgb(0, 157, 87) (Dark Cyan - Lime Green / Green Haze)
+            3. #FFCC29 / rgb(255, 204, 41) ( Vivid Yellow / Sunglow)
+*/
+
+a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,dialog,div,dl,dt,em,embed,fieldset,figcaption,figure,font,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,hr,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,meter,nav,object,ol,output,p,pre,progress,q,rp,rt,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video,xmp{border:0;margin:0;padding:0;font-size:100%}html,body{height:100%}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}b,strong{font-weight:bold}img{color:transparent;font-size:0;vertical-align:middle;-ms-interpolation-mode:bicubic}ol,ul{list-style:none}li{display:list-item}table{border-collapse:collapse;border-spacing:0}th,td,caption{font-weight:normal;vertical-align:top;text-align:left}q{quotes:none}q:before,q:after{content:'';content:none}sub,sup,small{font-size:75%}sub,sup{line-height:0;position:relative;vertical-align:baseline}sub{bottom:-0.25em}sup{top:-0.5em}svg{overflow:hidden}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+section > ul li.enter{
+    opacity: 0;
+    height: 0;
+    padding: 0;
+}
+
+section > ul li.enter-active{
+    opacity: 1;
+    height: 176px;
+    padding: 10px;
+}
+
+section > ul li.exit{
+    opacity: 1;
+    height: 176px;
+    padding: 10px;
+}
+
+section > ul li.exit-active{
+    opacity: 0;
+    height: 0;
+    padding: 0;
+}
+
+.rdt{}
+
+.rdt .rdtPicker{
+    max-height: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: 9;
+    background: rgba(255, 255, 255, .9);
+    left: 10px;
+    right: 10px;
+    padding: 0;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, .15);
+    border-radius: 5px;
+    transition: all 200ms ease-in-out;
+    -moz-transition: all 200ms ease-in-out;
+    -webkit-transition: all 200ms ease-in-out;
+}
+
+.rdt.rdtOpen .rdtPicker{
+    max-height: 300px;
+    padding: 5px;
+    border: 1px solid #EEE;
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+}
+
+section > ul li .rdt .rdtPicker{
+    left: 10px;
+    right: 10px;
+}
+
+section > ul li ul li ul li .rdt .rdtPicker{
+    left: 5px;
+    right: 5px;
+    bottom: 55px;
+    top: auto;
+}
+
+.rdt .rdtPicker table{
+    width: 100%;
+}
+
+.rdt .rdtPicker table tr th,
+.rdt .rdtPicker table tr td{
+    text-align: center;
+    cursor: pointer;
+}
+
+.rdt .rdtPicker table tr th{
+    padding: 8px 5px 0 5px;
+    font-size: 16px;
+    line-height: 16px;
+    font-weight: bold;
+}
+
+.rdt .rdtPicker table tr th.dow{
+    color: #999;
+    font-size: 12px;
+    line-height: 12px;
+    padding: 5px;
+}
+
+.rdt .rdtPicker table tr th span{
+    position: relative;
+    color: #2F2F2F;
+    top: auto;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    opacity: 1;
+    font-size: 26px;
+    line-height: auto;
+    margin: 0;
+    height: 26px;
+}
+
+.rdt .rdtPicker table tr td{
+    padding: 6px 2.5px 3px 2.5px;
+    font-size: 14px;
+    line-height: 12px;
+    color: #2F2F2F;
+    border-radius: 5px;
+    transition: all 200ms ease-in-out;
+    -moz-transition: all 200ms ease-in-out;
+    -webkit-transition: all 200ms ease-in-out;
+}
+
+.rdt .rdtPicker table tr td.rdtDay{
+    width: 14.28%;
+}
+
+.rdt .rdtPicker table tr td:hover{
+    color: #009d57;
+    background: #EEE;
+}
+
+.rdt .rdtPicker table tr td.rdtToday{
+    color: #FFF;
+    background: #00B8F1;
+}
+
+.rdt .rdtPicker table tr td.rdtActive{
+    color: #FFF;
+    background: #009d57;
+}
+
+.rdt .rdtPicker table tr td.rdtDisabled{
+    pointer-events: none;
+    opacity: .25;
+}
+
+.sel-container{
+}
+
+.sel-container .sel__control{
+    border-radius: 5px;
+    cursor: pointer;
+    border: 2px solid #DDD !important;
+    box-shadow: none;
+    z-index: 1;
+    transition: all 200ms ease-in-out;
+    -moz-transition: all 200ms ease-in-out;
+    -webkit-transition: all 200ms ease-in-out;
+}
+
+.sel-container .sel__control:hover{
+    border: 2px solid #999 !important;
+}
+
+.sel-container .sel__control.sel__control--menu-is-open,
+.sel-container .sel__control.sel__control--menu-is-open:hover{
+    border: 2px solid #00B8F1 !important;
+}
+
+.sel-container .sel__value-container{
+    padding: 0 12px;
+}
+
+.sel-container .sel__value-container input{
+    height: 41px;
+    font-size: 16px !important;
+}
+
+.sel-container .sel__single-value{
+    font-size: 16px;
+    line-height: 16px;
+    margin: 1px 0 0 0;
+}
+
+.sel-container .sel__menu{
+    margin: 0;
+    z-index: 9;
+    border-radius: 5px;
+    border: 1px solid #EEE;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, .15);
+}
+
+.sel-container .sel__option{
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 14px;
+    transition: all 200ms ease-in-out;
+    -moz-transition: all 200ms ease-in-out;
+    -webkit-transition: all 200ms ease-in-out;
+}
+
+.sel-container .sel__option.sel__option--is-focused{
+    background: #EEE;
+    color: rgba(0, 157, 87, 1);
+    outline: none;
+}
+
+.sel-container .sel__option.sel__option--is-selected{
+    color: #FFF;
+    background: rgba(0, 157, 87, 1);
+}
+
+.sel-container .sel__option:hover,
+.sel-container .sel__option.sel__option--is-focused:hover{
+    
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1600px){}
+
+@media screen and (min-width: 768px) and (max-width: 1024px){}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape){}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait){}
+
+@media screen and (max-width: 767px){}
+
+@media screen and (max-width: 767px) and (orientation: landscape){}
+
+@media screen and (max-width: 767px) and (orientation: portrait){
+    section > ul li.enter-active,
+    section > ul li.exit{
+        height: 231px;
+    }
+}
+
+/*
+@media screen and (min-width: 1025px) and (max-width: 1600px){}
+
+@media screen and (min-width: 768px) and (max-width: 1024px){}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape){}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait){}
+
+@media screen and (max-width: 767px){}
+
+@media screen and (max-width: 767px) and (orientation: landscape){}
+
+@media screen and (max-width: 767px) and (orientation: portrait){}
+*/

@@ -1,0 +1,817 @@
+/*
+JABAR DIGITAL SERVICE
+URL: ?
+AUTHOR: Nabil Amer Thabit (nbilz//lab//dsign | @nbilz)
+EMAIL: nbilz@live.com
+CREATE DATE: Jan 7, 2020
+UPDATE DATE: Jan 7, 2020
+REVISION: 1
+NAME: App.module.css
+TYPE: Cascading Style Sheet
+DESCRIPTION: Jabar Digital Service | Formulir Pendaftaran Online 
+PALLETE:    1. #00B8F1 / rgb(0, 184, 241) (Pure (or Mostly Pure) Cyan / Cerulean)
+            2. #009D57 / rgb(0, 157, 87) (Dark Cyan - Lime Green / Green Haze)
+            3. #FFCC29 / rgb(255, 204, 41) ( Vivid Yellow / Sunglow)
+*/
+
+@font-face{
+    font-family: 'Intro';
+    src: url('assets/font/Intro-Regular-Alt.woff2') format('woff2'),
+         url('assets/font/Intro-Regular-Alt.woff') format('woff'),
+         url('assets/font/Intro-Regular-Alt.ttf') format('ttf'),
+         url('assets/font/Intro-Regular-Alt.eot') format('eot'),
+         url('assets/font/Intro-Regular-Alt.svg') format('svg');
+    font-style: normal;
+}
+
+@font-face{
+    font-family: 'Intro';
+    src: url('assets/font/Intro-Black-Alt.woff2') format('woff2'),
+         url('assets/font/Intro-Black-Alt.woff') format('woff'),
+         url('assets/font/Intro-Black-Alt.ttf') format('ttf'),
+         url('assets/font/Intro-Black-Alt.eot') format('eot'),
+         url('assets/font/Intro-Black-Alt.svg') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face{
+    font-family: 'Intro';
+    src: url('assets/font/Intro-Light-Alt.woff2') format('woff2'),
+         url('assets/font/Intro-Light-Alt.woff') format('woff'),
+         url('assets/font/Intro-Light-Alt.ttf') format('ttf'),
+         url('assets/font/Intro-Light-Alt.eot') format('eot'),
+         url('assets/font/Intro-Light-Alt.svg') format('svg');
+    font-weight: 100;
+    font-style: normal;
+}
+
+html{
+    text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+input,
+textarea,
+button{
+    display: block;
+    margin: 0;
+    padding: 0;
+    font-family: 'Intro', Helvetica, Arial, sans-serif;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    transition: all 200ms ease-in-out;
+    -moz-transition: all 200ms ease-in-out;
+    -webkit-transition: all 200ms ease-in-out;
+}
+
+input:focus,
+textarea:focus,
+button:focus{
+    outline: none;
+}
+
+body{
+    margin: 0;
+    font-size: 12px;
+    line-height: 12px;
+    color: #2F2F2F;
+    background: #FFF;
+    font-family: 'Intro', Helvetica, Arial, sans-serif;
+    font-smoothing: antialiased;
+    -o-font-smoothing: antialiased;
+    -ms-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+section{
+    max-width: 550px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    opacity: 1;
+    transition: opacity 200ms ease-in-out;
+    -moz-transition: opacity 200ms ease-in-out;
+    -webkit-transition: opacity 200ms ease-in-out;
+}
+
+section.hide{
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    padding: 0;
+}
+
+header{
+    position: fixed;
+    width: 100%;
+    background: rgba(255, 255, 255, .9);
+    border-bottom: 1px solid #DDD;
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    z-index: 99;
+    box-shadow: 0 15px 15px -15px rgba(0, 0, 0, .05);
+}
+
+header section{
+    padding: 20px;
+    transition: padding 200ms ease-in-out;
+    -moz-transition: padding 200ms ease-in-out;
+    -webkit-transition: padding 200ms ease-in-out;
+}
+
+header.light section{
+    padding: 10px 20px;
+}
+
+header a{
+    display: block;
+}
+
+header a img{
+    display: block;
+    margin: 0 auto;
+    width: 175px;
+    object-fit: contain;
+    transition: width 200ms ease-in-out;
+    -moz-transition: width 200ms ease-in-out;
+    -webkit-transition: width 200ms ease-in-out;
+}
+
+header.light a img{
+    width: 125px;
+}
+
+.padtop{
+    height: 113px;
+}
+
+footer{
+    position: relative;
+    color: #FFF;
+    text-align: center;
+    background: #009d57;
+    overflow: hidden;
+}
+
+footer:before,
+footer:after{
+    content: '';
+    position: absolute;
+    background: #00B8F1;
+    top: -70px;
+    left: -30%;
+    width: 50%;
+    height: 150px;
+    z-index: 0;
+    border-radius: 100px;
+    transform: rotate(15deg);
+    animation: footerLeft 10s infinite ease-in-out;
+}
+
+footer:after{
+    top: -12px;
+    left: auto;
+    right: -30%;
+    background: #ffcc29;
+    transform: rotate(15deg);
+}
+
+@keyframes footerLeft{
+    0%{transform: rotate(15deg);}
+    50%{transform: rotate(-15deg);}
+    100%{transform: rotate(15deg);}
+}
+
+footer section{
+    position: relative;
+    z-index: 1;
+    padding: 20px;
+}
+
+footer a{
+    font-weight: bold;
+    text-decoration: none;
+    color: #FFF;
+    text-transform: uppercase;
+    transition: all 200ms ease-in-out;
+    -moz-transition: all 200ms ease-in-out;
+    -webkit-transition: all 200ms ease-in-out;
+}
+
+footer a:hover{
+    padding: 0 5px;
+}
+
+footer span{
+    display: block;
+    margin: 5px 0 0 0;
+    font-size: 11px;
+    line-height: 11px;
+}
+
+.title{
+    text-align: center;
+    margin: 0 0 40px 0;
+    font-size: 22px;
+    line-height: 26px;
+    text-transform: uppercase;
+}
+
+.title span{
+    display: block;
+    font-size: 14px;
+    line-height: 18px;
+    color: #6F6F6F;
+    text-transform: none;
+}
+
+.title.sakses{
+    background: #009D57;
+    padding: 30px;
+    border-radius: 20px;
+    color: #FFCC29;
+}
+
+.title.sakses span{
+    color: #FFF;
+}
+
+section > ul{
+    margin: -15px -10px -10px -10px;
+    overflow: auto;
+}
+
+section > ul li{
+    position: relative;
+    padding: 10px;
+    float: left;
+    width: 100%;
+    box-sizing: border-box;
+    transition: all 300ms ease-in-out;
+    -moz-transition: all 300ms ease-in-out;
+    -webkit-transition: all 300ms ease-in-out;
+}
+
+section > ul li ul{
+    margin: -5px;
+    overflow: auto;
+}
+
+section > ul li ul li{
+    padding: 5px;
+}
+
+/*
+section > ul > li > ul{
+    overflow: hidden;
+}
+*/
+
+section > ul > li > ul > li:nth-child(1){
+    width: 8%;
+    text-align: center;
+    font-size: 18px;
+}
+
+section > ul > li > ul > li:nth-child(1) div{
+    background: #EEE;
+    color: #999;
+    line-height: 155px;
+    border-radius: 5px;
+    transition: all 300ms ease-in-out;
+    -moz-transition: all 300ms ease-in-out;
+    -webkit-transition: all 300ms ease-in-out;
+}
+
+section > ul > li > ul:hover > li:nth-child(1) div{
+    background: #DDD;
+    color: #888;
+}
+
+section > ul > li > ul > li:nth-child(2){
+    width: 84%;
+}
+
+section > ul > li > ul > li:nth-child(3){
+    width: 8%;
+}
+
+section > ul li ul li ul{
+    margin: -5px;
+    overflow: auto;
+}
+
+section > ul li ul li ul li{
+    padding: 5px;
+}
+
+section > ul li.lay2{
+    width: 50%;
+}
+
+section > ul li.fieldset{
+    font-size: 16px;
+    line-height: 20px;
+    padding: 15px 10px 3px 10px;
+    text-transform: uppercase;
+    color: #666;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+section > ul li.fieldset em{
+    position: absolute;
+    right: 10px;
+    top: 15px;
+    color: #D10000;
+    margin: 3px 0 0 0;
+    font-style: normal;
+    font-size: 12px;
+    line-height: 12px;
+    text-transform: none;
+    letter-spacing: 0;
+}
+
+section > ul li.fieldset span{
+    display: block;
+    position: relative;
+    top: 0;
+    right: 0;
+    font-size: 14px;
+    line-height: 18px;
+    margin: 5px 0 0 0;
+    color: #777;
+    text-transform: none;
+    letter-spacing: 0;
+    text-align: left;
+}
+
+section > ul li label{
+    position: absolute;
+    pointer-events: none;
+    background: transparent;
+    color: #999;
+    padding: 0 5px;
+    top: 25px;
+    left: 20px;
+    font-size: 16px;
+    line-height: 16px;
+    z-index: 2;
+    transition: all 200ms ease-in-out;
+    -moz-transition: all 200ms ease-in-out;
+    -webkit-transition: all 200ms ease-in-out;
+}
+
+section > ul li ul li ul li label{
+    top: 20px;
+    left: 15px;
+}
+
+section > ul li.hasval label{
+    top: 5px;
+    color: #2F2F2F;
+    background: #FFF;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 14px;
+}
+
+section > ul li ul li ul li.hasval label{
+    top: 1px;
+}
+
+section > ul li label em{
+    color: #D10000;
+    font-style: normal;
+}
+
+section > ul li span{
+    position: absolute;
+    text-align: right;
+    pointer-events: none;
+    right: 25px;
+    top: 20px;
+    color: #AAA;
+    font-weight: normal;
+    margin: 0 0 0 10px;
+    font-size: 11px;
+    line-height: 13px;
+    opacity: 1;
+    overflow: hidden;
+    transition: all 200ms ease-in-out;
+    -moz-transition: all 200ms ease-in-out;
+    -webkit-transition: all 200ms ease-in-out;
+}
+
+section > ul li.hasval span{
+    opacity: 0;
+}
+
+section > ul li input,
+section > ul li textarea{
+    border: 2px solid #DDD;
+    padding: 10px 12px;
+    font-size: 16px;
+    line-height: 16px;
+    width: 100%;
+    box-sizing: border-box;
+    height: 45px;
+    border-radius: 5px;
+}
+
+section > ul li textarea{
+    height: 80px;
+    resize: none;
+}
+
+section > ul li.hasval input,
+section > ul li.hasval textarea{
+    padding: 12px 12px 8px 12px;
+}
+
+section > ul li input:hover,
+section > ul li textarea:hover{
+    border: 2px solid #999;
+}
+
+section > ul li input:focus,
+section > ul li textarea:focus{
+    border: 2px solid #00B8F1;
+}
+
+section > ul li ul li ul:hover li input,
+section > ul li ul li ul:hover li textarea{
+    border: 2px solid #BBB;
+}
+
+section > ul li ul li ul:hover li input:hover,
+section > ul li ul li ul:hover li textarea:hover{
+    border: 2px solid #999;
+}
+
+section > ul li ul li ul:hover li input:focus,
+section > ul li ul li ul:hover li textarea:focus{
+    border: 2px solid #00B8F1;
+}
+
+section > ul li button{
+    cursor: pointer;
+    background: #00B8F1;
+    border: none;
+    width: 100%;
+    height: 45px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    color: #FFF;
+    font-size: 16px;
+    line-height: 16px;
+    font-weight: bold;
+    box-shadow: 0 10px 10px -10px rgba(0, 0, 0, .25);
+}
+
+section > ul li button:hover{
+    background: #0098D1;
+    box-shadow: 0 10px 10px -10px rgba(0, 0, 0, .5);
+}
+
+section > ul li button.grey{
+    background: #999;
+}
+
+section > ul li button.grey:hover{
+    background: #777;
+}
+
+section > ul li button.red{
+    background: #D10000;
+}
+
+section > ul li button.red:hover{
+    background: #B10000;
+}
+
+section > ul li button.addnew{
+    height: 35px;
+    background: #009d57;
+    font-size: 14px;
+    line-height: 14px;
+    text-transform: none;
+}
+
+section > ul li button.addnew:hover{
+    background: #007d37;
+}
+
+section > ul li button[disabled]{
+    opacity: .5;
+    pointer-events: none;
+}
+
+section > ul > li > ul > li:nth-child(3) button{
+    height: 155px;
+}
+
+section > ul li button svg{
+    pointer-events: none;
+    display: inline-block;
+    vertical-align: middle;
+    width: 14px;
+    height: 14px;
+    margin: -3px 0 0 5px;
+    transform: scale(1, 1);
+    transition: all 200ms ease-in-out;
+    -moz-transition: all 200ms ease-in-out;
+    -webkit-transition: all 200ms ease-in-out;
+}
+
+section > ul li button:hover svg{
+    transform: scale(1.2, 1.2);
+}
+
+section > ul li button.addnew svg{
+    transform: rotate(0deg) scale(1, 1);
+}
+
+section > ul li button.addnew:hover svg{
+    transform: rotate(90deg) scale(1.2, 1.2);
+}
+
+section > ul li button.back svg{
+    transform: rotate(180deg);
+    margin: -3px 5px 0 0;
+}
+
+section > ul li button.red svg{
+    margin: -3px 0 0 0;
+    transform: rotate(45deg) scale(1, 1);
+}
+
+section > ul li button.red:hover svg{
+    margin: -3px 0 0 0;
+    transform: rotate(135deg) scale(1.2, 1.2);
+}
+
+section > ul li button svg path{
+    fill: #FFF;
+}
+
+section > ul li button.withanim:not([disabled]):not(:hover){
+    animation: buttonAnim 2.5s infinite ease-in-out;
+}
+
+@keyframes buttonAnim{
+    0%{box-shadow: 0 10px 10px -10px rgba(0, 0, 0, .25), 0 0 0 0 rgba(0, 184, 241, .15); transform: translate(0, 0);}
+    25%{box-shadow: 0 10px 10px -10px rgba(0, 0, 0, .25), 0 0 10px 0 rgba(0, 184, 241, 1); transform: translate(-5px, 0);}
+    50%{box-shadow: 0 10px 10px -10px rgba(0, 0, 0, .25), 0 0 0 0 rgba(0, 184, 241, .15); transform: translate(0, 0);}
+    75%{box-shadow: 0 10px 10px -10px rgba(0, 0, 0, .25), 0 0 10px 0 rgba(0, 184, 241, 1); transform: translate(5px, 0);}
+    100%{box-shadow: 0 10px 10px -10px rgba(0, 0, 0, .25), 0 0 0 0 rgba(0, 184, 241, .15); transform: translate(0, 0);}
+}
+
+section > ul li .regtext{
+    text-align: center;
+    font-size: 14px;
+    line-height: 18px;
+    color: #666;
+    padding: 5px 20px 0 20px;
+}
+
+section > ul li .regtext a{
+    font-weight: bold;
+    text-decoration: none;
+    color: #009d57;
+    transition: all 200ms ease-in-out;
+    -moz-transition: all 200ms ease-in-out;
+    -webkit-transition: all 200ms ease-in-out;
+}
+
+section > ul li .regtext a:hover{
+    color: #007d37;
+}
+
+ul.result,
+ul.result > li > ul{
+    margin: -10px;
+}
+
+ul.result > li > ul{
+    margin: -1.5px;
+    padding: 0 0 0 50px;
+}
+
+ul.result > li,
+ul.result > li > ul > li{
+    padding: 10px;
+    width: 100% !important;
+    font-size: 16px !important;
+    line-height: 20px !important;
+    text-align: left !important;
+}
+
+ul.result > li.lay2,
+ul.result > li > ul > li.lay2{
+    width: 50% !important;
+}
+
+ul.result > li > ul > li{
+    padding: 1.5px;
+}
+
+ul.result > li > ul > li:nth-child(2){
+    font-style: italic;
+    font-size: 14px !important;
+    line-height: 18px !important;
+}
+
+ul.result > li > ul > li:nth-child(3){
+    font-weight: bold;
+    color: #666;
+    font-size: 12px !important;
+    line-height: 16px !important;
+}
+
+ul.result > li > span,
+ul.result > li > ul > li > span{
+    margin: 0 0 5px 0 !important;
+    font-size: 12px !important;
+    line-height: 12px !important;
+    position: relative;
+    text-align: left;
+    top: auto;
+    left: auto;
+    right: auto;
+    margin: auto;
+    display: block;
+    font-weight: bold;
+}
+
+ul.result > li .numbering{
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    bottom: 10px;
+    width: 40px;
+    line-height: 63px;
+    color: #666;
+    text-align: center;
+    vertical-align: middle;
+    background: #EEE;
+    border-radius: 5px;
+}
+
+svg.iconsuc{
+    display: block;
+    width: 75px;
+    margin: 0 auto 15px auto;
+}
+
+svg.iconsuc .circle,
+svg.iconsuc .stripe1,
+svg.iconsuc .stripe2{
+    transform-origin: center center;
+    fill: #FFF;
+}
+
+svg.iconsuc .circle{
+    animation: circleAnim 3s ease-in-out infinite;
+}
+
+@keyframes circleAnim{
+    0%{opacity: 0; transform: scale(0, 0);}
+    10%{opacity: 1; transform: scale(1, 1);}
+    90%{opacity: 1; transform: scale(1, 1);}
+    100%{opacity: 0; transform: scale(0, 0);}
+}
+
+svg.iconsuc .stripe1{
+    animation: stripe1Suc 3s ease-in-out infinite;
+}
+
+@keyframes stripe1Suc{
+    0%{opacity: 0; transform: scale(1, 1) translate(4px, -24px) rotate(-45deg);}
+    10%{opacity: 0; transform: scale(1, 1) translate(4px, -24px) rotate(-45deg);}
+    20%{opacity: 1; transform: scale(1, 1) translate(0, 0) rotate(0deg);}
+    50%{opacity: 1; transform: scale(1.1, 1.1) translate(0, 0) rotate(0deg);}
+    80%{opacity: 1; transform: scale(1, 1) translate(0, 0) rotate(0deg);}
+    90%{opacity: 0; transform: scale(1, 1) translate(4px, -24px) rotate(-45deg);}
+    100%{opacity: 0; transform: scale(1, 1) translate(4px, -24px) rotate(-45deg);}
+}
+
+svg.iconsuc .stripe2{
+    animation: stripe2Suc 3s ease-in-out infinite;
+}
+
+@keyframes stripe2Suc{
+    0%{opacity: 0; transform: scale(1, 1) translate(-4px, -5px) rotate(45deg);}
+    10%{opacity: 0; transform: scale(1, 1) translate(-4px, -5px) rotate(45deg);}
+    20%{opacity: 1; transform: scale(1, 1) translate(0, 0) rotate(0deg);}
+    50%{opacity: 1; transform: scale(1.1, 1.1) translate(0, 0) rotate(0deg);}
+    80%{opacity: 1; transform: scale(1, 1) translate(0, 0) rotate(0deg);}
+    90%{opacity: 0; transform: scale(1, 1) translate(-4px, -5px) rotate(45deg);}
+    100%{opacity: 0; transform: scale(1, 1) translate(-4px, -5px) rotate(45deg);}
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1600px){}
+
+@media screen and (min-width: 768px) and (max-width: 1024px){}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape){}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait){}
+
+@media screen and (max-width: 767px){}
+
+@media screen and (max-width: 767px) and (orientation: landscape){}
+
+@media screen and (max-width: 767px) and (orientation: portrait){
+    header a img{
+        width: 165px;
+    }
+
+    header.light a img{
+        width: 115px;
+    }
+
+    .padtop{
+        height: 103px;
+    }
+    
+    .title{
+        font-size: 18px;
+        line-height: 22px;
+    }
+    
+    .title span{
+        font-size: 12px;
+        line-height: 16px;
+    }
+    
+    section > ul li.lay2{
+        width: 100%;
+    }
+    
+    section > ul li.fieldset em{
+        display: block;
+        position: relative;
+        top: 0;
+        right: 0;
+        margin: 7px 0 0 0;
+    }
+    
+    section > ul li.fieldset span{
+        font-size: 12px;
+        line-height: 16px;
+        margin: 2px 0 0 0;
+    }
+    
+    section > ul > li > ul > li:nth-child(1),
+    section > ul > li > ul > li:nth-child(3){
+        width: 15%;
+    }
+    
+    section > ul > li > ul > li:nth-child(2){
+        width: 70%;
+    }
+    
+    section > ul > li > ul > li:nth-child(1) div{
+        line-height: 210px;
+    }
+    
+    section > ul > li > ul > li:nth-child(3) button{
+        height: 210px;
+    }
+    
+    footer section{
+        font-size: 11px;
+        line-height: 13px;
+    }
+    
+    footer span{
+        font-size: 10px;
+        line-height: 10px;
+    }
+    
+    ul.result > li.lay2,
+    ul.result > li > ul > li.lay2{
+        width: 100% !important;
+    }
+}
+
+/*
+@media screen and (min-width: 1025px) and (max-width: 1600px){}
+
+@media screen and (min-width: 768px) and (max-width: 1024px){}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape){}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait){}
+
+@media screen and (max-width: 767px){}
+
+@media screen and (max-width: 767px) and (orientation: landscape){}
+
+@media screen and (max-width: 767px) and (orientation: portrait){}
+*/
